@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Map Generation</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div>
+      <label for="land">Land: </label><input type="range" min="0" max="7" value="2" id="land">
+      <br>
+      <input type="button" value="Regenerate" onclick="regen(document.getElementById('land').value)"/>
+    </div>
+  </body>
+</html>
