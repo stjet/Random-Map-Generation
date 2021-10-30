@@ -79,7 +79,7 @@ function diversify(tiles, desert_clusters, forest_clusters) {
     while (true) {
       let x = Math.floor(Math.random()*tiles[0].length);
       let y = Math.floor(Math.random()*tiles.length);
-      if (tiles[x][y] == "grassland") {
+      if (tiles[y][x] == "grassland") {
         clusters_list[String(x)+','+String(y)] = "desert";
         break;
       }
@@ -89,7 +89,7 @@ function diversify(tiles, desert_clusters, forest_clusters) {
     while (true) {
       let x = Math.floor(Math.random()*tiles[0].length);
       let y = Math.floor(Math.random()*tiles.length);
-      if (tiles[x][y] == "grassland") {
+      if (tiles[y][x] == "grassland") {
         clusters_list[String(x)+','+String(y)] = "forest";
         break;
       }
@@ -97,7 +97,7 @@ function diversify(tiles, desert_clusters, forest_clusters) {
   }
   for (y=0; y < tiles.length; y++) {
     for (x=0; x < tiles[0].length; x++) {
-      if (tiles[x][y] == "ocean") {
+      if (tiles[y][x] == "ocean") {
         continue;
       }
       let probability = 0;
@@ -128,7 +128,7 @@ function diversify(tiles, desert_clusters, forest_clusters) {
       }
       if (probability !=0 && type) {
         if (Math.random() < probability) {
-          tiles[x][y] = type;
+          tiles[y][x] = type;
         }
       }
     }
